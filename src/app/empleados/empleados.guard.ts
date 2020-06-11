@@ -10,7 +10,7 @@ import { LoginService } from '../login/login.service';
 export class CanEmpleadosGuard implements CanLoad {
     constructor(
         private login:LoginService,
-        private router:Router){}
+        private router:Router){} 
 
 
     canLoad(route: Route, segments: UrlSegment[]): boolean | Observable<boolean> | Promise<boolean> {
