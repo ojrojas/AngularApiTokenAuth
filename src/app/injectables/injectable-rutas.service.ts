@@ -30,6 +30,7 @@ export class InjectableRutasService {
     public EliminarSubArea:string = "https://localhost:5001/subareas/eliminarsubarea"
     public ObtenerSubArea:string = "https://localhost:5001/subareas/obtenersubarea"
     public ObtenerSubAreas:string = "https://localhost:5001/subareas/obtenersubareas"
+    public ObtenerSubAreasByAreaId:string = "https://localhost:5001/subareas/obtenersubareasbyareaid"
 
     //CuentasManager
     public ObtenerToken:string = "https://localhost:5001/CuentasManager/ObtenerToken"

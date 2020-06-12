@@ -1,21 +1,21 @@
 export class EmpleadosViewModel {
     id: string;
-    typeidentification: string;
-    identificationnumber: string;
-    name: string;
-    secondname: string;
-    Surname: string;
-    secondsurname: string;
-    subareaId: string;
+    typeIdentification?: number;
+    identificationNumber?: string;
+    name?: string;
+    secondName?: string;
+    surName?: string;
+    secondSurname?: string;
+    subAreaId?: string;
 
     constructor(obj?: any) {
         this.id = obj && obj.id || null;
-        this.typeidentification = obj && obj.typeidentification || null;
-        this.identificationnumber = obj && obj.identificationnumber || null;
+        this.typeIdentification = obj && obj.typeIdentification || null;
+        this.identificationNumber = obj && obj.identificationNumber || null;
         this.name = obj && obj.name || null;
-        this.secondname = obj && obj.secondname || null;
-        this.Surname = obj && obj.Surname || null;
-        this.secondsurname = obj && obj.secondsurname || null;
-        this.subareaId = obj && obj.subareaId || null;
+        this.secondName = obj && obj.secondName || null;
+        this.surName = obj && obj.surName || null;
+        this.secondSurname = obj && obj.secondSurname || null;
+        this.subAreaId = obj && obj.subAreaId || null;
     }
 }

@@ -11,11 +11,11 @@ const routes:Routes=[
         component: EmpleadosComponent 
     },
     {
-        path:'editar',
+        path:'editar/:id',
         component:EmpleadosEditarComponent
     },
     {
-        path:'eliminar',
+        path:'eliminar/:id',
         component:EmpleadosEliminarComponent
     },
     {

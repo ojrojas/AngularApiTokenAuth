@@ -1,2 +1,58 @@
-<app-nav-menu><h1>Eliminar</h1>
+<app-nav-menu>
+    <mat-card>
+      <h1>Eliminar Empleados</h1>
+    </mat-card>
+    <form [formGroup]="formLogin" (ngSubmit)="onSubmit(formLogin.value)">
+        <mat-form-field>
+            <mat-label>Tipo Identificación</mat-label>
+            <mat-select formControlName="typeIdentification" readonly>
+              <mat-option *ngFor="let tipeId of typesId"  [value]="tipeId.id">
+                {{tipeId.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <br>
+          <mat-form-field appearance="fill">
+              <mat-label>Num. Identificacion</mat-label>
+              <input matInput formControlName="identificationNumber" readonly required>
+              <mat-error *ngIf="formLogin.controls['identificationNumber'].hasError('required')">
+                Identificacion es <strong>requireda</strong>
+              </mat-error>
+            </mat-form-field>
+          <br>
+          <mat-form-field appearance="fill">
+            <mat-label>Nombre</mat-label>
+            <input matInput formControlName="name" required readonly>
+            <mat-error *ngIf="formLogin.controls['name'].hasError('required')">
+                Nombre es <strong>requireda</strong>
+            </mat-error>
+          </mat-form-field>
+          <br>
+          <mat-form-field appearance="fill">
+            <mat-label>Segundo Nombre</mat-label>
+            <input matInput formControlName="secondName" required readonly>
+            <mat-error *ngIf="formLogin.controls['secondName'].hasError('required')">
+                Segundo nombre es <strong>requireda</strong>
+            </mat-error>
+          </mat-form-field>
+          <br>
+          <mat-form-field appearance="fill">
+            <mat-label>Apellido</mat-label>
+            <input matInput formControlName="surName" required readonly>
+            <mat-error *ngIf="formLogin.controls['surName'].hasError('required')">
+                Apellido es <strong>requireda</strong>
+            </mat-error>
+          </mat-form-field>
+          <br>
+          <mat-form-field appearance="fill">
+            <mat-label>Segundo Apellido</mat-label>
+            <input matInput formControlName="secondSurname" required readonly>
+            <mat-error *ngIf="formLogin.controls['secondSurname'].hasError('required')">
+                Segundo Apellido es <strong>requireda</strong>
+            </mat-error>
+          </mat-form-field>
+          <br>
+          <br>
+        <button mat-raised-button color="primary" type="submit">Enivar</button>
+        </form>
 </app-nav-menu>

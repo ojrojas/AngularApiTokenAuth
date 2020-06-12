@@ -23,7 +23,7 @@ export class AreasEditarComponent implements OnInit {
         private fb:FormBuilder, 
         private areaService: AreasServices,
         private snackBar : MatSnackBar,
-        private route: ActivatedRoute,){
+        private route: ActivatedRoute){
     }
     ngOnInit(): void {
         let idarea = this.route.snapshot.paramMap.get('id');

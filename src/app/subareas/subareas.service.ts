@@ -4,6 +4,7 @@ import { InjectableRutasService } from '../injectables/injectable-rutas.service'
 import { Paginacion } from '../modelpaginacion/paginacion.interface';
 import { SubAreasViewModel } from './subareas.model';
 import { map } from 'rxjs/operators';
+import { AreasViewModel } from '../areas/areas.model';
 
 @Injectable({
     providedIn: 'root'
@@ -30,6 +31,25 @@ export class SubAreasServices {
                     });
                 }));
     }
+
+    obtenerAreasById(areasViewModel:AreasViewModel) {
+        const urlQuery = this.baseUrls.ObtenerSubAreas;
+        console.log("urlQuery ObtenerAreas", urlQuery);
+        return this.http.post<Array<SubAreasViewModel>>(
+            urlQuery,areasViewModel)
+            .pipe(
+                map((response: SubAreasViewModel[]) => {
+                    return <Array<SubAreasViewModel>>response.map(item => {
+                        return new SubAreasViewModel({
+                            id: item.id,
+                            code: item.code,
+                            name: item.name,
+                            areaId:item.areaId
+                        });
+                    });
+                }));
+    }
+
 
     obtenerArea(area:SubAreasViewModel) {
         const urlQuery = this.baseUrls.ObtenerSubArea;

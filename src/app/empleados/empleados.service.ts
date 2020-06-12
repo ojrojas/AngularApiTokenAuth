@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { InjectableRutasService } from '../injectables/injectable-rutas.service';
 import { Paginacion } from '../modelpaginacion/paginacion.interface';
 import { EmpleadosViewModel } from './empleados.model';
@@ -23,13 +23,13 @@ export class EmpleadosServices {
                     return <Array<EmpleadosViewModel>>response.map(item => {
                         return new EmpleadosViewModel({
                             id: item.id,
-                            typeidentification: item.typeidentification,
-                            identificationnumber: item.identificationnumber,
+                            typeIdentification: item.typeIdentification,
+                            identificationNumber: item.identificationNumber,
                             name: item.name,
-                            secondname: item.secondname,
-                            Surname: item.Surname,
-                            secondsurname: item.secondsurname,
-                            subareaId: item.subareaId
+                            secondName: item.secondName,
+                            surName: item.surName,
+                            secondSurname: item.secondSurname,
+                            subAreaId: item.subAreaId
                         });
                     });
                 }));
@@ -42,6 +42,7 @@ export class EmpleadosServices {
             urlQuery, area)
             .pipe(
                 map((response: EmpleadosViewModel) => {
+                    console.log("empleado:", response);
                     return response;
                 }));
     }

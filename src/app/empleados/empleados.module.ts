@@ -17,6 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
     declarations:[
@@ -40,7 +41,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
         MatCheckboxModule,
         ReactiveFormsModule,
         HttpClientModule,
-        MatSnackBarModule
+        MatSnackBarModule,
+        MatSelectModule
     ],
     providers:[]
 })
