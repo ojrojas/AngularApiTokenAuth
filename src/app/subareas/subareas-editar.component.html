@@ -1,7 +1,8 @@
 <app-nav-menu>
     <mat-card>
-      <h1>Crear Areas</h1>
-    </mat-card>
+<mat-card-title>
+      <h1>Editar SubAreas</h1>
+    </mat-card-title>
     <form [formGroup]="formLogin" (ngSubmit)="onSubmit(formLogin.value)">
         <mat-form-field appearance="fill">
             <mat-label>Codigo</mat-label>
@@ -31,4 +32,6 @@
           <br>
         <button mat-raised-button color="primary" type="submit">Enivar</button>
         </form>
+    </mat-card>
+
 </app-nav-menu>

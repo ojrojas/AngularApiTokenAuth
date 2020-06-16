@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import {MatCheckboxModule} from '@angular/material/checkbox'; 
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-
+import {MatGridListModule} from '@angular/material/grid-list'; 
 
 @NgModule({
     declarations:[
@@ -29,7 +29,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
         MatCheckboxModule,
         ReactiveFormsModule,
         HttpClientModule,
-        MatSnackBarModule
+        MatSnackBarModule,
+        MatGridListModule
     ],
     exports:[],
     providers:[LoginService]

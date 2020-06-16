@@ -1,28 +1,40 @@
-<mat-card>
-    Login
-</mat-card>
-<div class="example-container">
-    <form [formGroup]="formLogin" (ngSubmit)="onSubmit(formLogin.value)">
-    <mat-form-field appearance="fill">
-        <mat-label>Usuario</mat-label>
-        <input matInput formControlName="nombreusuario" required>
-        <mat-error *ngIf="formLogin.controls['nombreusuario'].hasError('required')">
-          Usuario es <strong>requiredo</strong>
-        </mat-error>
-      </mat-form-field>
-      <br>
-      <mat-form-field appearance="fill">
-          <mat-label>Contraseña</mat-label>
-          <input matInput type="password" formControlName="contrasena" required>
-          <mat-error *ngIf="formLogin.controls['contrasena'].hasError('required')">
-            Contraseña es <strong>requireda</strong>
-          </mat-error>
-        </mat-form-field>
-      <br>
-      <mat-checkbox formControlName="recuerdame">Recuerdame!</mat-checkbox>
-      <br>
-      <br>
-    <button mat-raised-button color="primary" type="submit">Enivar</button>
-    </form>
-  </div>
-  
+<mat-grid-list cols="3" rowHeight="1:1">
+  <mat-grid-tile></mat-grid-tile>
+  <mat-grid-tile>
+
+    <div class="example-container" style="text-align: center;">
+      <mat-card>
+        <mat-card-title>
+          Login
+        </mat-card-title>
+        <mat-card-content>
+          <form [formGroup]="formLogin" (ngSubmit)="onSubmit(formLogin.value)">
+            <mat-form-field appearance="fill">
+              <mat-label>Usuario</mat-label>
+              <input matInput formControlName="nombreusuario" required>
+              <mat-error *ngIf="formLogin.controls['nombreusuario'].hasError('required')">
+                Usuario es <strong>requiredo</strong>
+              </mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field appearance="fill">
+              <mat-label>Contraseña</mat-label>
+              <input matInput type="password" formControlName="contrasena" required>
+              <mat-error *ngIf="formLogin.controls['contrasena'].hasError('required')">
+                Contraseña es <strong>requireda</strong>
+              </mat-error>
+            </mat-form-field>
+            <br>
+            <mat-checkbox formControlName="recuerdame">Recuerdame!</mat-checkbox>
+            <br>
+            <br>
+            <button mat-raised-button color="primary" type="submit">Enivar</button>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+
+  </mat-grid-tile>
+  <mat-grid-tile></mat-grid-tile>
+</mat-grid-list>

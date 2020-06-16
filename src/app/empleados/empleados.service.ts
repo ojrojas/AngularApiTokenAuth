@@ -91,4 +91,27 @@ export class EmpleadosServices {
                     return response;
                 }));
     }
+
+    buscarEmpleados(filtro:string){
+        
+        const urlQuery = this.baseUrls.BuscarEmpleados + filtro;
+        console.log("urlQuery BuscarEmpleados", urlQuery);
+        return this.http.get<Array<EmpleadosViewModel>>(
+            urlQuery)
+            .pipe(
+                map((response: EmpleadosViewModel[]) => {
+                    return <Array<EmpleadosViewModel>>response.map(item => {
+                        return new EmpleadosViewModel({
+                            id: item.id,
+                            typeIdentification: item.typeIdentification,
+                            identificationNumber: item.identificationNumber,
+                            name: item.name,
+                            secondName: item.secondName,
+                            surName: item.surName,
+                            secondSurname: item.secondSurname,
+                            subAreaId: item.subAreaId
+                        });
+                    });
+                }));
+    }
 }

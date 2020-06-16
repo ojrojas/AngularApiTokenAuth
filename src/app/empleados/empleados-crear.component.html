@@ -1,76 +1,79 @@
 <app-nav-menu>
-    <mat-card>
+  <mat-card>
+    <mat-card-title>
       <h1>Crear Empleados</h1>
-    </mat-card>
+    </mat-card-title>
     <form [formGroup]="formLogin" (ngSubmit)="onSubmit(formLogin.value)">
-        <mat-form-field>
-            <mat-label>Tipo Identificación</mat-label>
-            <mat-select formControlName="typeIdentification">
-              <mat-option *ngFor="let tipeId of typesId"  [value]="tipeId.id">
-                {{tipeId.name}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-          <br>
-          <mat-form-field appearance="fill">
-              <mat-label>Num. Identificacion</mat-label>
-              <input matInput formControlName="identificationNumber" required>
-              <mat-error *ngIf="formLogin.controls['identificationNumber'].hasError('required')">
-                Identificacion es <strong>requireda</strong>
-              </mat-error>
-            </mat-form-field>
-          <br>
-          <mat-form-field appearance="fill">
-            <mat-label>Nombre</mat-label>
-            <input matInput formControlName="name" required>
-            <mat-error *ngIf="formLogin.controls['name'].hasError('required')">
-                Nombre es <strong>requireda</strong>
-            </mat-error>
-          </mat-form-field>
-          <br>
-          <mat-form-field appearance="fill">
-            <mat-label>Segundo Nombre</mat-label>
-            <input matInput formControlName="secondName" required>
-            <mat-error *ngIf="formLogin.controls['secondName'].hasError('required')">
-                Segundo nombre es <strong>requireda</strong>
-            </mat-error>
-          </mat-form-field>
-          <br>
-          <mat-form-field appearance="fill">
-            <mat-label>Apellido</mat-label>
-            <input matInput formControlName="surName" required>
-            <mat-error *ngIf="formLogin.controls['surName'].hasError('required')">
-                Apellido es <strong>requireda</strong>
-            </mat-error>
-          </mat-form-field>
-          <br>
-          <mat-form-field appearance="fill">
-            <mat-label>Segundo Apellido</mat-label>
-            <input matInput formControlName="secondSurname" required>
-            <mat-error *ngIf="formLogin.controls['secondSurname'].hasError('required')">
-                Segundo Apellido es <strong>requireda</strong>
-            </mat-error>
-          </mat-form-field>
-          <br>
-          <mat-form-field >
-            <mat-label>Areas</mat-label>
-            <mat-select formControlName="AreaId">
-              <mat-option *ngFor="let area of areas"  [value]="area.id" (click)="onSelected(area)">
-                {{area.name}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-          <br>
-          
-          <mat-form-field>
-            <mat-label>SubAreas</mat-label>
-            <mat-select formControlName="subAreaId">
-              <mat-option *ngFor="let subarea of subAreas"  [value]="subarea.id">
-                {{subarea.name}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-          <br>
-        <button mat-raised-button color="primary" type="submit">Enivar</button>
-        </form>
+      <mat-form-field>
+        <mat-label>Tipo Identificación</mat-label>
+        <mat-select formControlName="typeIdentification">
+          <mat-option *ngFor="let tipeId of typesId" [value]="tipeId.id">
+            {{tipeId.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Num. Identificacion</mat-label>
+        <input matInput formControlName="identificationNumber"  (keypress)="soloNumeros($event)" required>
+        <mat-error *ngIf="formLogin.controls['identificationNumber'].hasError('required')">
+          Identificacion es <strong>requireda</strong>
+        </mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="name" required>
+        <mat-error *ngIf="formLogin.controls['name'].hasError('required')">
+          Nombre es <strong>requireda</strong>
+        </mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Segundo Nombre</mat-label>
+        <input matInput formControlName="secondName" required>
+        <mat-error *ngIf="formLogin.controls['secondName'].hasError('required')">
+          Segundo nombre es <strong>requireda</strong>
+        </mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Apellido</mat-label>
+        <input matInput formControlName="surName" required>
+        <mat-error *ngIf="formLogin.controls['surName'].hasError('required')">
+          Apellido es <strong>requireda</strong>
+        </mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Segundo Apellido</mat-label>
+        <input matInput formControlName="secondSurname" required>
+        <mat-error *ngIf="formLogin.controls['secondSurname'].hasError('required')">
+          Segundo Apellido es <strong>requireda</strong>
+        </mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Areas</mat-label>
+        <mat-select formControlName="AreaId">
+          <mat-option *ngFor="let area of areas" [value]="area.id" (click)="onSelected(area)">
+            {{area.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+
+      <mat-form-field>
+        <mat-label>SubAreas</mat-label>
+        <mat-select formControlName="subAreaId">
+          <mat-option *ngFor="let subarea of subAreas" [value]="subarea.id">
+            {{subarea.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <button mat-raised-button color="primary" type="submit">Enivar</button>
+    </form>
+  </mat-card>
+
 </app-nav-menu>

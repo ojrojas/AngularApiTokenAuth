@@ -1,7 +1,8 @@
 <app-nav-menu>
     <mat-card>
+      <mat-card-title>
       <h1>Editar Empleados</h1>
-    </mat-card>
+    </mat-card-title>
     <form [formGroup]="formLogin" (ngSubmit)="onSubmit(formLogin.value)">
         <mat-form-field>
             <mat-label>Tipo Identificación</mat-label>
@@ -14,7 +15,7 @@
           <br>
           <mat-form-field appearance="fill">
               <mat-label>Num. Identificacion</mat-label>
-              <input matInput formControlName="identificationNumber" required>
+              <input matInput formControlName="identificationNumber" (keypress)="soloNumeros($event)" required>
               <mat-error *ngIf="formLogin.controls['identificationNumber'].hasError('required')">
                 Identificacion es <strong>requireda</strong>
               </mat-error>
@@ -73,4 +74,5 @@
           <br>
         <button mat-raised-button color="primary" type="submit">Enivar</button>
         </form>
+    </mat-card>
 </app-nav-menu>

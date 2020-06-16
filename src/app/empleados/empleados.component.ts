@@ -56,11 +56,23 @@ export class EmpleadosComponent implements OnInit {
 
   onCambioPage(even: PageEvent) {
     console.log("esto es event", even);
-    this.empleadosServices.obtenerEmpleados({ pagina: even.pageIndex + 1, tamanoPagina: even.pageSize }).subscribe(
+    this.empleadosServices.obtenerEmpleados({ pagina: even.pageIndex, tamanoPagina: even.pageSize }).subscribe(
       (res: Array<EmpleadosViewModel>) => {
         if (res.length > 0)
           this.dataSource = res;
       });
+  }
+
+  onBuscar(filtro: any) {
+    console.log("Se ingreso: ", filtro.value);
+    this.empleadosServices.buscarEmpleados(filtro.value).subscribe(
+      (res: Array<EmpleadosViewModel>) => {
+        if (res.length > 0)
+          this.dataSource = res;
+        console.log("respuesta" ,res);
+      }, (error) => console.log(error),
+      () => console.log("consulta finalizada")
+    )
   }
 
 

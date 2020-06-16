@@ -3,13 +3,15 @@ import { HomeComponent } from './home.component';
 import { HomeRountingModule } from './home-routing.module';
 import { CommonModule } from '@angular/common';
 import { NavMenuModule } from '../nav-menu/nav-menu.module';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
     declarations:[HomeComponent],
     imports:[
         CommonModule,
         HomeRountingModule,
-        NavMenuModule
+        NavMenuModule,
+        MatCardModule
     ],
     exports:[]
 })

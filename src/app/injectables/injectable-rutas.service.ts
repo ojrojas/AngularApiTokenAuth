@@ -13,6 +13,7 @@ export class InjectableRutasService {
     public CrearEmpleado:string = "https://localhost:5001/empleados/crearempleado"
     public ActualizarEmpleado:string = "https://localhost:5001/empleados/actualizarempleado"
     public EliminarEmpleado:string = "https://localhost:5001/empleados/eliminarempleado"
+    public BuscarEmpleados:string = "https://localhost:5001/empleados/buscarempleados?filtro="
 
     //Areas
     public ContarAreas:string = "https://localhost:5001/areas/contarareas"

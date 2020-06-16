@@ -3,6 +3,16 @@
     <h1>Empleados</h1>
     <button mat-raised-button [routerLink]="['crear']">Crear Empleados</button>
   </mat-card>
+  <mat-card>
+    <mat-card-title>Buscar Empleados</mat-card-title>
+    <mat-card-content>
+      <mat-form-field appearance="fill" style="padding: 10px;">
+        <mat-label>Nombre o Identificacion</mat-label>
+        <input matInput #buscar>
+      </mat-form-field>
+      <button mat-raised-button (click)="onBuscar(buscar)"> Buscar </button>
+    </mat-card-content>
+  </mat-card>
   <div class="overflowtable">
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
