@@ -5,36 +5,38 @@ Injectable({
 })
 
 export class InjectableRutasService {
+
+    baseUrlApp:string = "https://localhost:5001";
     
     //Empleados
-    public ObtenerEmpleados:string = "https://localhost:5001/empleados/obtenerempleados"
-    public ObtenerEmpleado:string = "https://localhost:5001/empleados/obtenerempleado"
-    public ContarEmpleados:string = "https://localhost:5001/empleados/contarempleados"
-    public CrearEmpleado:string = "https://localhost:5001/empleados/crearempleado"
-    public ActualizarEmpleado:string = "https://localhost:5001/empleados/actualizarempleado"
-    public EliminarEmpleado:string = "https://localhost:5001/empleados/eliminarempleado"
-    public BuscarEmpleados:string = "https://localhost:5001/empleados/buscarempleados?filtro="
+    public ObtenerEmpleados:string = `${this.baseUrlApp}/empleados/obtenerempleados`
+    public ObtenerEmpleado:string = `${this.baseUrlApp}/empleados/obtenerempleado`
+    public ContarEmpleados:string = `${this.baseUrlApp}/empleados/contarempleados`
+    public CrearEmpleado:string = `${this.baseUrlApp}/empleados/crearempleado`
+    public ActualizarEmpleado:string = `${this.baseUrlApp}/empleados/actualizarempleado`
+    public EliminarEmpleado:string = `${this.baseUrlApp}/empleados/eliminarempleado`
+    public BuscarEmpleados:string = `${this.baseUrlApp}/empleados/buscarempleados?filtro=`
 
     //Areas
-    public ContarAreas:string = "https://localhost:5001/areas/contarareas"
-    public CrearArea:string = "https://localhost:5001/areas/creararea"
-    public ActualizarArea:string = "https://localhost:5001/areas/actualizararea"
-    public EliminarArea:string = "https://localhost:5001/areas/eliminararea"
-    public ObtenerArea:string = "https://localhost:5001/areas/obtenerarea"
-    public ObtenerAreas:string = "https://localhost:5001/areas/obtenerareas"
+    public ContarAreas:string = `${this.baseUrlApp}/areas/contarareas`
+    public CrearArea:string = `${this.baseUrlApp}/areas/creararea`
+    public ActualizarArea:string = `${this.baseUrlApp}/areas/actualizararea`
+    public EliminarArea:string = `${this.baseUrlApp}/areas/eliminararea`
+    public ObtenerArea:string = `${this.baseUrlApp}/areas/obtenerarea`
+    public ObtenerAreas:string = `${this.baseUrlApp}/areas/obtenerareas`
    
 
     //SubAreas
-    public ContarSubAreas:string = "https://localhost:5001/subareas/contarsubareas"
-    public CrearSubArea:string = "https://localhost:5001/subareas/crearsubarea"
-    public ActualizarSubArea:string = "https://localhost:5001/subareas/actualizarsubarea"
-    public EliminarSubArea:string = "https://localhost:5001/subareas/eliminarsubarea"
-    public ObtenerSubArea:string = "https://localhost:5001/subareas/obtenersubarea"
-    public ObtenerSubAreas:string = "https://localhost:5001/subareas/obtenersubareas"
-    public ObtenerSubAreasByAreaId:string = "https://localhost:5001/subareas/obtenersubareasbyareaid"
+    public ContarSubAreas:string = `${this.baseUrlApp}/subareas/contarsubareas`
+    public CrearSubArea:string = `${this.baseUrlApp}/subareas/crearsubarea`
+    public ActualizarSubArea:string = `${this.baseUrlApp}/subareas/actualizarsubarea`
+    public EliminarSubArea:string = `${this.baseUrlApp}/subareas/eliminarsubarea`
+    public ObtenerSubArea:string = `${this.baseUrlApp}/subareas/obtenersubarea`
+    public ObtenerSubAreas:string = `${this.baseUrlApp}/subareas/obtenersubareas`
+    public ObtenerSubAreasByAreaId:string = `${this.baseUrlApp}/subareas/obtenersubareasbyareaid`
 
     //CuentasManager
-    public ObtenerToken:string = "https://localhost:5001/CuentasManager/ObtenerToken"
-    public CrearUsuarioApp:string = "https://localhost:5001/cuentasmanager/crearusuarioApp"
-    public EliminarUsuarioApp:string = "https://localhost:5001/cuentasmanager/eliminarusuarioapp"
+    public ObtenerToken:string = `${this.baseUrlApp}/CuentasManager/ObtenerToken`
+    public CrearUsuarioApp:string = `${this.baseUrlApp}/cuentasmanager/crearusuarioApp`
+    public EliminarUsuarioApp:string = `${this.baseUrlApp}/cuentasmanager/eliminarusuarioapp`
 }
